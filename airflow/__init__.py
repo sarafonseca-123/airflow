@@ -51,7 +51,19 @@ if os.environ.get("_AIRFLOW_PATCH_GEVENT"):
 # configuration is therefore initted early here, simply by importing it.
 from airflow import configuration, settings
 
-__all__ = ["__version__", "login", "DAG", "PY36", "PY37", "PY38", "PY39", "PY310", "XComArg"]
+__all__ = [
+    "__version__",
+    "login",
+    "DAG",
+    "PY36",
+    "PY37",
+    "PY38",
+    "PY39",
+    "PY310",
+    "PY311",
+    "PY312",
+    "XComArg",
+]
 
 # Make `airflow` an namespace package, supporting installing
 # airflow.providers.* in different locations (i.e. one in site, and one in user
@@ -75,6 +87,7 @@ PY38 = sys.version_info >= (3, 8)
 PY39 = sys.version_info >= (3, 9)
 PY310 = sys.version_info >= (3, 10)
 PY311 = sys.version_info >= (3, 11)
+PY312 = sys.version_info >= (3, 12)
 
 # Things to lazy import in form {local_name: ('target_module', 'target_name', 'deprecated')}
 __lazy_imports: dict[str, tuple[str, str, bool]] = {
